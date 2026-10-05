@@ -28,7 +28,7 @@ export async function generateMetadata({ params }: PageProps<"/[slug]">): Promis
 
 const label = "mb-8 text-sm uppercase tracking-[0.25em] text-muted";
 const h2 = "font-display text-[clamp(3rem,9vw,8rem)] font-semibold leading-[0.9]";
-const section = "px-6 pb-32 md:px-10 md:pb-48";
+const section = "px-5 pb-20 md:px-10 md:pb-48";
 
 export default async function DivisionPage({ params }: PageProps<"/[slug]">) {
   const { slug } = await params;
@@ -46,7 +46,7 @@ export default async function DivisionPage({ params }: PageProps<"/[slug]">) {
         <HeroText eyebrow={`${d.index} — ${d.short}`} lines={d.name.split(" ")} sub={d.tagline} delay={0.2} />
       </section>
 
-      <section className="px-6 py-32 md:px-10 md:py-48">
+      <section className="px-6 py-20 md:px-10 md:py-48">
         <SplitHeading
           as="p"
           className="max-w-6xl font-display text-[clamp(2rem,5vw,5rem)] font-medium leading-[1.05]"
@@ -139,12 +139,12 @@ export default async function DivisionPage({ params }: PageProps<"/[slug]">) {
       )}
 
       {d.slug !== "academy" && (
-        <section className="px-6 py-32 md:px-10 md:py-48">
+        <section className="px-6 py-20 md:px-10 md:py-48">
           <Testimonials />
         </section>
       )}
 
-      <section className="px-6 py-24 md:px-10">
+      <section className="px-5 py-16 md:px-10 md:py-24">
         <Link
           href="/contact"
           className="inline-block rounded-full bg-accent px-12 py-5 text-sm font-semibold uppercase tracking-[0.2em] text-black transition-transform hover:scale-105"
@@ -153,7 +153,7 @@ export default async function DivisionPage({ params }: PageProps<"/[slug]">) {
         </Link>
       </section>
 
-      <Link href={`/${next.slug}`} className="group block border-t border-line px-6 py-24 md:px-10 md:py-40">
+      <Link href={`/${next.slug}`} className="group block border-t border-line px-5 py-16 md:px-10 md:py-24 md:py-40">
         <p className="text-sm uppercase tracking-[0.25em] text-muted">Next division</p>
         <p className="mt-4 flex items-center justify-between font-display text-[clamp(3rem,11vw,10rem)] font-semibold leading-none transition-transform duration-500 group-hover:translate-x-4">
           {next.name}

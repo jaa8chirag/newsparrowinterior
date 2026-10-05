@@ -33,7 +33,7 @@ export default function Home() {
         />
       </section>
 
-      <section className="px-6 py-32 md:px-10 md:py-48">
+      <section className="px-6 py-20 md:px-10 md:py-48">
         <p className={label}>About</p>
         <SplitHeading
           as="p"
@@ -53,7 +53,7 @@ export default function Home() {
 
       <Marquee items={divisions.map((d) => d.name)} />
 
-      <section className="px-6 py-32 md:px-10 md:py-48">
+      <section className="px-6 py-20 md:px-10 md:py-48">
         <div className="mb-16 flex items-end justify-between">
           <SplitHeading className={h2} text="Our divisions" />
           <p className="hidden max-w-xs text-sm text-muted md:block">
@@ -65,11 +65,11 @@ export default function Home() {
 
       <Showcase />
 
-      <section className="px-6 py-32 md:px-10 md:py-48">
+      <section className="px-6 py-20 md:px-10 md:py-48">
         <Process />
       </section>
 
-      <section className="px-6 pb-32 md:px-10 md:pb-48">
+      <section className="px-5 pb-20 md:px-10 md:pb-48">
         <div className="mb-16 flex items-end justify-between gap-6">
           <SplitHeading className={h2} text="Recent work" />
           <Link href="/shopfits" className="hidden text-sm uppercase tracking-[0.2em] underline underline-offset-8 md:block">
@@ -84,11 +84,11 @@ export default function Home() {
         <Marquee items={clients} />
       </section>
 
-      <section className="px-6 py-32 md:px-10 md:py-48">
+      <section className="px-6 py-20 md:px-10 md:py-48">
         <Testimonials />
       </section>
 
-      <section className="px-6 pb-32 md:px-10 md:pb-48">
+      <section className="px-5 pb-20 md:px-10 md:pb-48">
         <p className={label}>Presence</p>
         <SplitHeading className={`${h2} mb-16`} text="35+ cities across India." />
         <Cities />

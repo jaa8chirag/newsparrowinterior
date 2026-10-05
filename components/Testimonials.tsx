@@ -26,7 +26,7 @@ export default function Testimonials() {
   return (
     <div ref={root}>
       <p className="mb-10 text-sm uppercase tracking-[0.25em] text-muted">Client words</p>
-      <div data-quote className="min-h-[20rem] md:min-h-[24rem]">
+      <div data-quote className="min-h-[14rem] md:min-h-[24rem]">
         <p className="max-w-5xl font-display text-[clamp(1.8rem,4.5vw,4.2rem)] font-medium leading-[1.05]">
           <span className="text-accent">“</span>
           {t.quote}

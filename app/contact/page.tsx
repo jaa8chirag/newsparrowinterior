@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 
 export default function ContactPage() {
   return (
-    <section className="min-h-screen px-6 pb-32 pt-40 md:px-10">
+    <section className="min-h-svh px-5 pb-20 pt-32 md:pt-40 md:px-10">
       <p className="mb-8 text-sm uppercase tracking-[0.25em] text-muted">Contact us</p>
       <SplitHeading
         as="h1"
@@ -18,7 +18,7 @@ export default function ContactPage() {
         text="Let's build what's next."
       />
 
-      <div className="mt-24 grid gap-20 md:grid-cols-2">
+      <div className="mt-16 grid gap-14 md:mt-24 md:gap-20 md:grid-cols-2">
         <div className="space-y-10">
           <div>
             <p className="mb-3 text-sm uppercase tracking-[0.2em] text-muted">Studio</p>
