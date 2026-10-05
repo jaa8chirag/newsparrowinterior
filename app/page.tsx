@@ -1,69 +1,98 @@
-import Image from "next/image";
+import Link from "next/link";
+import Preloader from "@/components/Preloader";
+import HeroBg from "@/components/HeroBg";
+import HeroScene from "@/components/HeroScene";
+import HeroText from "@/components/HeroText";
+import SplitHeading from "@/components/SplitHeading";
+import DivisionList from "@/components/DivisionList";
+import Showcase from "@/components/Showcase";
+import Marquee from "@/components/Marquee";
+import Stats from "@/components/Stats";
+import Process from "@/components/Process";
+import Projects from "@/components/Projects";
+import Testimonials from "@/components/Testimonials";
+import Cities from "@/components/Cities";
+import { divisions, clients, brand } from "@/lib/data";
+
+const label = "mb-8 text-sm uppercase tracking-[0.25em] text-muted";
+const h2 = "font-display text-[clamp(3rem,9vw,8rem)] font-semibold leading-[0.9]";
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
+    <>
+      <Preloader />
+
+      <section className="relative h-svh overflow-hidden">
+        <HeroBg src="/images/wa1.jpeg" />
+        <HeroScene />
+        <HeroText
+          delay={2.4}
+          eyebrow={`${brand.group} — PMC · Retail Intelligence · Design · Shopfits · Academy`}
+          lines={["Turning spaces", "into success."]}
+          sub="Retail store design, fit-out and project management — one group taking brands from site survey to opening day."
         />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+      </section>
+
+      <section className="px-6 py-32 md:px-10 md:py-48">
+        <p className={label}>About</p>
+        <SplitHeading
+          as="p"
+          className="max-w-6xl font-display text-[clamp(2rem,5.5vw,5.5rem)] font-medium leading-[1.02]"
+          text="We integrate AI-driven technology with a skilled workforce to redefine how modern retail stores are designed, built and delivered."
+        />
+        <div className="mt-20">
+          <Stats
+            stats={[
+              { value: 1100, suffix: "+", label: "Sites completed" },
+              { value: 35, suffix: "+", label: "Indian cities" },
+              { value: 20, suffix: "+", label: "Years of experience" },
+            ]}
+          />
+        </div>
+      </section>
+
+      <Marquee items={divisions.map((d) => d.name)} />
+
+      <section className="px-6 py-32 md:px-10 md:py-48">
+        <div className="mb-16 flex items-end justify-between">
+          <SplitHeading className={h2} text="Our divisions" />
+          <p className="hidden max-w-xs text-sm text-muted md:block">
+            Previously two websites — Shopfits and PMC. Now every discipline lives under one domain.
           </p>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+        <DivisionList />
+      </section>
+
+      <Showcase />
+
+      <section className="px-6 py-32 md:px-10 md:py-48">
+        <Process />
+      </section>
+
+      <section className="px-6 pb-32 md:px-10 md:pb-48">
+        <div className="mb-16 flex items-end justify-between gap-6">
+          <SplitHeading className={h2} text="Recent work" />
+          <Link href="/shopfits" className="hidden text-sm uppercase tracking-[0.2em] underline underline-offset-8 md:block">
+            View Shopfits →
+          </Link>
         </div>
-      </main>
-    </div>
+        <Projects />
+      </section>
+
+      <section className="border-y border-line py-16">
+        <p className="mb-8 px-6 text-sm uppercase tracking-[0.25em] text-muted md:px-10">Trusted by</p>
+        <Marquee items={clients} />
+      </section>
+
+      <section className="px-6 py-32 md:px-10 md:py-48">
+        <Testimonials />
+      </section>
+
+      <section className="px-6 pb-32 md:px-10 md:pb-48">
+        <p className={label}>Presence</p>
+        <SplitHeading className={`${h2} mb-16`} text="35+ cities across India." />
+        <Cities />
+      </section>
+    </>
   );
 }
